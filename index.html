@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Dinarco</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <h3 class="title">Página en construcción</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem reiciendis omnis sint. Laboriosam
+                repellendus, dolores molestias natus aperiam quam temporibus maxime molestiae, atque rerum dolorum
+                neque, ea fuga nemo quis!</p>
+            <div class="count-down">
+                <div class="box">
+                    <h3 id="dias">00</h3>
+                    <span>dias</span>
+                </div>
+                <div class="box">
+                    <h3 id="horas">00</h3>
+                    <span>horas</span>
+                </div>
+                <div class="box">
+                    <h3 id="minutos">00</h3>
+                    <span>minutos</span>
+                </div>
+                <div class="box">
+                    <h3 id="segundos">00</h3>
+                    <span>segundos</span>
+                </div>
+            </div>
+        </div>
+        <div class="image">
+            <img src="./img/constructor.svg" alt="">
+        </div>
+    </div>
+    <script>
+        let countDate = new Date('Mar 1, 2023 00:00:00').getTime();
+        function countDown() {
+            let now = new Date().getTime();
+            gap = countDate - now;
+            let segundos = 1000;
+            let minutos = segundos * 60;
+            let horas = minutos * 60;
+            let dias = horas * 24;
+            let d = Math.floor(gap / (dias));
+            let h = Math.floor((gap % (dias)) / (horas));
+            let m = Math.floor((gap % (horas)) / (minutos));
+            let s = Math.floor((gap % (minutos)) / (segundos));
+            document.getElementById('dias').innerText = d;
+            document.getElementById('horas').innerText = h;
+            document.getElementById('minutos').innerText = m;
+            document.getElementById('segundos').innerText = s;
+        }
+        setInterval(function () {
+            countDown();
+        }, 1000)
+    </script>
+</body>
+
+</html>
