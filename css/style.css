@@ -43,6 +43,7 @@
 .container .content p {
   color: #666;
   padding: 5px 0;
+  text-transform: none;
 }
 
 .container .content .count-down {
